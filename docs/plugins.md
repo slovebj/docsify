@@ -1,6 +1,6 @@
-# List of Plugins
+#1 List of Plugins
 
-## Full text search
+#2 Full text search
 
 By default, the hyperlink on the current page is recognized and the content is saved in `localStorage`. You can also specify the path to the files.
 
@@ -62,7 +62,7 @@ By default, the hyperlink on the current page is recognized and the content is s
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 ```
 
-## Google Analytics
+#2 Google Analytics
 
 Install the plugin and configure the track id.
 
@@ -83,7 +83,7 @@ Configure by `data-ga`.
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
 ```
 
-## emoji
+#2 emoji
 
 The default is to support parsing emoji. For example `:100:` will be parsed to :100:. But it is not precise because there is no matching non-emoji string. If you need to correctly parse the emoji string, you need install this plugin.
 
@@ -93,7 +93,7 @@ The default is to support parsing emoji. For example `:100:` will be parsed to :
 
 ?> If you don't want to parse to emoji, you can use __colon_<span>_</span> or `&#58;`. If you need to use in the title, we recommend using `&#58;`. For example, `&#58;100:`
 
-## External Script
+#2 External Script
 
 If the script on the page is an external one (imports a js file via `src` attribute), you'll need this plugin to make it work.
 
@@ -101,7 +101,7 @@ If the script on the page is an external one (imports a js file via `src` attrib
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/external-script.min.js"></script>
 ```
 
-## Zoom image
+#2 Zoom image
 
 Medium's image zoom. Based on [medium-zoom](https://github.com/francoischalifour/medium-zoom).
 
@@ -115,11 +115,11 @@ Exclude the special image
 ![](image.png ":no-zoom")
 ```
 
-## Edit on github
+#2 Edit on github
 
 Add `Edit on github` button on every pages. Provided by [@njleonzhang](https://github.com/njleonzhang), check [document](https://github.com/njleonzhang/docsify-edit-on-github)
 
-## Demo code with instant preview and jsfiddle integration
+#2 Demo code with instant preview and jsfiddle integration
 
 With this plugin, sample code can be rendered on the page instantly, so that the readers can see the preview immediately.
 When readers expand the demo box, the source code and description are shown there. if they click the button `Try in Jsfiddle`,
@@ -127,7 +127,7 @@ When readers expand the demo box, the source code and description are shown ther
 
 [Vue](https://njleonzhang.github.io/docsify-demo-box-vue/) and [React](https://njleonzhang.github.io/docsify-demo-box-react/) are both supported.
 
-## Copy to Clipboard
+#2 Copy to Clipboard
 
 Add a simple `Click to copy` button to all preformatted code blocks to effortlessly allow users to copy example code from your docs. Provided by [@jperasmus](https://github.com/jperasmus)
 
@@ -137,7 +137,7 @@ Add a simple `Click to copy` button to all preformatted code blocks to effortles
 
 See [here](https://github.com/jperasmus/docsify-copy-code/blob/master/README.md) for more details.
 
-## Disqus
+#2 Disqus
 
 Disqus comments. https://disqus.com/
 
@@ -150,7 +150,7 @@ Disqus comments. https://disqus.com/
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/disqus.min.js"></script>
 ```
 
-## Gitalk
+#2 Gitalk
 
 [Gitalk](https://github.com/gitalk/gitalk) is a modern comment component based on Github Issue and Preact.
 
@@ -172,7 +172,7 @@ Disqus comments. https://disqus.com/
 </script>
 ```
 
-## Pagination
+#2 Pagination
 
 Pagination for docsify. By [@imyelo](https://github.com/imyelo)
 
@@ -181,7 +181,7 @@ Pagination for docsify. By [@imyelo](https://github.com/imyelo)
 <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
 ```
 
-## Tabs
+#2 Tabs
 
 A docsify.js plugin for displaying tabbed content from markdown.
 
@@ -189,6 +189,6 @@ A docsify.js plugin for displaying tabbed content from markdown.
 
 Provided by [@jhildenbiddle](https://github.com/jhildenbiddle/docsify-tabs).
 
-## More plugins
+#2 More plugins
 
 See [awesome-docsify](awesome?id=plugins)

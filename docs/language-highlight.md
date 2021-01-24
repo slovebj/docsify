@@ -1,4 +1,4 @@
-# Language highlighting
+#1 Language highlighting
 
 Docsify uses [Prism](https://prismjs.com) to highlight code blocks in your pages. Prism supports the following languages by default:
 

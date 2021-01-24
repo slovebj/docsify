@@ -1,4 +1,4 @@
-# Embed files
+#1 Embed files
 
 With docsify 4.6 it is now possible to embed any type of file.
 
@@ -20,7 +20,7 @@ Normally, this will compiled into a link, but in docsify, if you add `:include` 
 
 External links can be used too - just replace the target. If you want to use a gist URL, see [Embed a gist](#embed-a-gist) section.
 
-## Embedded file type
+#2 Embedded file type
 
 Currently, file extensions are automatically recognized and embedded in different ways.
 
@@ -42,7 +42,7 @@ You will get:
 
 [filename](_media/example.md ':include :type=code')
 
-## Markdown with YAML Front Matter
+#2 Markdown with YAML Front Matter
 
 When using Markdown, YAML front matter will be stripped from the rendered content. The attributes cannot be used in this case.
 
@@ -54,7 +54,7 @@ You will get just the content
 
 [filename](_media/example-with-yaml.md ':include')
 
-## Embedded code fragments
+#2 Embedded code fragments
 
 Sometimes you don't want to embed a whole file. Maybe because you need just a few lines but you want to compile and test the file in CI.
 
@@ -63,13 +63,13 @@ Sometimes you don't want to embed a whole file. Maybe because you need just a fe
 ```
 
 In your code file you need to surround the fragment between `/// [demo]` lines (before and after the fragment).
-Alternatively you can use `### [demo]`.
+Alternatively you can use `#3 [demo]`.
 
 Example:
 
 [filename](_media/example.js ':include :type=code :fragment=demo')
 
-## Tag attribute
+#2 Tag attribute
 
 If you embed the file as `iframe`, `audio` and `video`, then you may need to set the attributes of these tags.
 
@@ -81,7 +81,7 @@ If you embed the file as `iframe`, `audio` and `video`, then you may need to set
 
 Did you see it? You only need to write directly. You can check [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) for these attributes.
 
-## The code block highlight
+#2 The code block highlight
 
 Embedding any type of source code file, you can specify the highlighted language or automatically identify.
 
@@ -95,13 +95,13 @@ Embedding any type of source code file, you can specify the highlighted language
 
 ?> How to set highlight? You can see [here](language-highlight.md).
 
-## Embed a gist
+#2 Embed a gist
 
 You can embed a gist as markdown content or as a code block - this is based on the approach at the start of [Embed Files](#embed-files) section, but uses a raw gist URL as the target.
 
 ?> **No** plugin or app config change is needed here to make this work. In fact, the "Embed" `script` tag that is copied from a gist will _not_ load even if you make plugin or config changes to allow an external script.
 
-### Identify the gist's metadata
+#3 Identify the gist's metadata
 
 Start by viewing a gist on `gist.github.com`. For the purposes of this guide, we use this gist:
 
@@ -128,7 +128,7 @@ Here are two examples based on the sample gist:
 
 Continue with one of the sections below to embed the gist on a Docsify page.
 
-### Render markdown content from a gist
+#3 Render markdown content from a gist
 
 This is a great way to embed content **seamlessly** in your docs, without sending someone to an external link. This approach is well-suited to reusing a gist of say installation instructions across doc sites of multiple repos. This approach works equally well with a gist owned by your account or by another user.
 
@@ -150,7 +150,7 @@ Which renders as:
 
 The `LABEL` can be any text you want. It acts as a _fallback_ message if the link is broken - so it is useful to repeat the filename here in case you need to fix a broken link. It also makes an embedded element easy to read at a glance.
 
-### Render a codeblock from a gist
+#3 Render a codeblock from a gist
 
 The format is the same as the previous section, but with `:type=code` added to the alt text. As with the [Embedded file type](#embedded-file-type) section, the syntax highlighting will be **inferred** from the extension (e.g. `.js` or `.py`), so you can leave the `type` set as `code`.
 

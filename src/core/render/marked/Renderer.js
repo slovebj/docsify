@@ -163,6 +163,9 @@ module.exports = class Renderer {
   }
 
   ic(text) {
-    return "ic:"+text;
+    return '<i'
+        + ' class="ic ic-'
+        + text
+        + '"></i>';
   }
 };

@@ -1,10 +1,10 @@
-# Vue compatibility
+#1 Vue compatibility
 
 Docsify allows Vue content to be added directly to you markdown pages. This can greatly simplify working with data and adding reactivity to your site.
 
 To get started, add Vue [2.x](https://vuejs.org) or [3.x](https://v3.vuejs.org) to your `index.html` file. Choose the production version for your live site or the development version for helpful console warnings and [Vue.js devtools](https://github.com/vuejs/vue-devtools) support.
 
-#### Vue 2.x
+#4 Vue 2.x
 
 ```html
 <!-- Production -->
@@ -14,7 +14,7 @@ To get started, add Vue [2.x](https://vuejs.org) or [3.x](https://v3.vuejs.org) 
 <script src="//cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 ```
 
-#### Vue 3.x
+#4 Vue 3.x
 
 ```html
 <!-- Production -->
@@ -24,7 +24,7 @@ To get started, add Vue [2.x](https://vuejs.org) or [3.x](https://v3.vuejs.org) 
 <script src="//cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
 ```
 
-## Template syntax
+#2 Template syntax
 
 Vue [template syntax](https://vuejs.org/v2/guide/syntax.html) is used to create dynamic content. With no additional configuration, this syntax offers several useful features like support for [JavaScript expressions](https://vuejs.org/v2/guide/syntax.html#Using-JavaScript-Expressions) and Vue [directives](https://vuejs.org/v2/guide/syntax.html#Directives) for loops and conditional rendering.
 
@@ -55,7 +55,7 @@ Vue [template syntax](https://vuejs.org/v2/guide/syntax.html) is used to create 
 
 Vue content becomes more interesting when [data](#data), [computed properties](#computed-properties), [methods](#methods), and [lifecycle hooks](#lifecycle-hooks) are used. These options can be specified as [global options](#global-options) or within DOM [mounts](#mounts) and [components](#components).
 
-### Data
+#3 Data
 
 ```js
 {
@@ -90,7 +90,7 @@ Vue content becomes more interesting when [data](#data), [computed properties](#
 
 [View output on GitHub](https://github.com/docsifyjs/docsify/blob/develop/docs/vue.md#data)
 
-### Computed properties
+#3 Computed properties
 
 ```js
 {
@@ -123,7 +123,7 @@ Good {{ timeOfDay }}!
 
 </output>
 
-### Methods
+#3 Methods
 
 ```js
 {
@@ -148,7 +148,7 @@ Good {{ timeOfDay }}!
   <p><button @click="hello">Say Hello</button></p>
 </output>
 
-### Lifecycle Hooks
+#3 Lifecycle Hooks
 
 ```js
 {
@@ -191,7 +191,7 @@ Good {{ timeOfDay }}!
   </div>
 </output>
 
-## Global options
+#2 Global options
 
 Use `vueGlobalOptions` to specify [Vue options](https://vuejs.org/v2/api/#Options-Data) for use with Vue content not explicitly mounted with [vueMounts](#mounts), [vueComponents](#components), or a [markdown script](#markdown-script). Changes to global `data` will persist and be reflected anywhere global references are used.
 
@@ -235,7 +235,7 @@ Notice the behavior when multiple global counters are rendered:
 
 Changes made to one counter affect the both counters. This is because both instances reference the same global `count` value. Now, navigate to a new page and return to this section to see how changes made to global data persist between page loads.
 
-## Mounts
+#2 Mounts
 
 Use `vueMounts` to specify DOM elements to mount as [Vue instances](https://vuejs.org/v2/guide/instance.html) and their associated options. Mount elements are specified using a [CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) as the key with an object containing Vue options as their value. Docsify will mount the first matching element in the main content area each time a new page is loaded. Mount element `data` is unique for each instance and will not persist as users navigate the site.
 
@@ -267,7 +267,7 @@ window.$docsify = {
   <button @click="count += 1">+</button>
 </output>
 
-## Components
+#2 Components
 
 Use `vueComponents` to create and register global [Vue components](https://vuejs.org/v2/guide/components.html). Components are specified using the component name as the key with an object containing Vue options as the value. Component `data` is unique for each instance and will not persist as users navigate the site.
 
@@ -300,7 +300,7 @@ window.$docsify = {
   <button-counter></button-counter>
 </output>
 
-## Markdown script
+#2 Markdown script
 
 Vue content can mounted using a `<script>` tag in your markdown pages.
 
@@ -325,7 +325,7 @@ Vue content can mounted using a `<script>` tag in your markdown pages.
 </script>
 ```
 
-## Technical Notes
+#2 Technical Notes
 
 - Docsify processes Vue content in the following order on each page load:
   1. Execute markdown `<script>`

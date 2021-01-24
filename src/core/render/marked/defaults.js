@@ -1,7 +1,7 @@
 function getDefaults() {
   return {
     baseUrl: null,
-    breaks: false,
+    breaks: true,
     gfm: true,
     headerIds: true,
     headerPrefix: '',

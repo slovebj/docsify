@@ -118,27 +118,39 @@ module.exports = class Tokenizer {
     }
   }
 
+  // heading(src) {
+  //   const cap = this.rules.block.heading.exec(src);
+  //   if (cap) {
+  //     let text = cap[2].trim();
+
+  //     // remove trailing #s
+  //     if (/#$/.test(text)) {
+  //       const trimmed = rtrim(text, '#');
+  //       if (this.options.pedantic) {
+  //         text = trimmed.trim();
+  //       } else if (!trimmed || / $/.test(trimmed)) {
+  //         // CommonMark requires space before trailing #s
+  //         text = trimmed.trim();
+  //       }
+  //     }
+
+  //     return {
+  //       type: 'heading',
+  //       raw: cap[0],
+  //       depth: cap[1].length,
+  //       text: text
+  //     };
+  //   }
+  // }
+
   heading(src) {
     const cap = this.rules.block.heading.exec(src);
     if (cap) {
-      let text = cap[2].trim();
-
-      // remove trailing #s
-      if (/#$/.test(text)) {
-        const trimmed = rtrim(text, '#');
-        if (this.options.pedantic) {
-          text = trimmed.trim();
-        } else if (!trimmed || / $/.test(trimmed)) {
-          // CommonMark requires space before trailing #s
-          text = trimmed.trim();
-        }
-      }
-
       return {
         type: 'heading',
         raw: cap[0],
-        depth: cap[1].length,
-        text: text
+        depth: parseInt(cap[1]),
+        text: cap[2]
       };
     }
   }
@@ -207,13 +219,13 @@ module.exports = class Tokenizer {
     if (cap) {
       let raw = cap[0];
       const bull = cap[2];
-      const isordered = bull.length > 1;
+      const isordered = (bull== "+");
 
       const list = {
         type: 'list',
         raw,
         ordered: isordered,
-        start: isordered ? +bull.slice(0, -1) : '',
+        start: isordered ? 1 : '',
         loose: false,
         items: []
       };
@@ -266,7 +278,7 @@ module.exports = class Tokenizer {
         // Remove the list item's bullet
         // so it is seen as the next token.
         space = item.length;
-        item = item.replace(/^ *([*+-]|\d+[.)]) ?/, '');
+        item = item.replace(/^ *([+-]) ?/, '');
 
         // Outdent whatever the
         // list item contains. Hacky.
@@ -292,11 +304,11 @@ module.exports = class Tokenizer {
 
         // Check for task list items
         if (this.options.gfm) {
-          istask = /^\[[ xX]\] /.test(item);
+          istask = /^\[[ xXyY]\] /.test(item);
           ischecked = undefined;
           if (istask) {
             ischecked = item[1] !== ' ';
-            item = item.replace(/^\[[ xX]\] +/, '');
+            item = item.replace(/^\[[ xXyY]\] +/, '');
           }
         }
 
@@ -382,17 +394,17 @@ module.exports = class Tokenizer {
     }
   }
 
-  lheading(src) {
-    const cap = this.rules.block.lheading.exec(src);
-    if (cap) {
-      return {
-        type: 'heading',
-        raw: cap[0],
-        depth: cap[2].charAt(0) === '=' ? 1 : 2,
-        text: cap[1]
-      };
-    }
-  }
+  // lheading(src) {
+  //   const cap = this.rules.block.lheading.exec(src);
+  //   if (cap) {
+  //     return {
+  //       type: 'heading',
+  //       raw: cap[0],
+  //       depth: cap[2].charAt(0) === '=' ? 1 : 2,
+  //       text: cap[1]
+  //     };
+  //   }
+  // }
 
   paragraph(src) {
     const cap = this.rules.block.paragraph.exec(src);
