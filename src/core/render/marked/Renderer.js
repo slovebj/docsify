@@ -44,21 +44,12 @@ module.exports = class Renderer {
     return html;
   }
 
-  heading(text, level, raw, slugger) {
+  heading(text, level, center, raw, slugger) {
     if (this.options.headerIds) {
-      return '<h'
-        + level
-        + ' id="'
-        + this.options.headerPrefix
-        + slugger.slug(raw)
-        + '">'
-        + text
-        + '</h'
-        + level
-        + '>\n';
+      return `<h${level} id="${slugger.slug(raw)}"${center}>${text}</h${level}>`;
     }
     // ignore IDs
-    return '<h' + level + '>' + text + '</h' + level + '>\n';
+    return '<h' + level + center + '>' + text + '</h' + level + '>\n';
   }
 
   hr() {
@@ -167,5 +158,9 @@ module.exports = class Renderer {
         + ' class="ic ic-'
         + text
         + '"></i>';
+  }
+
+  dzj(dt,text) {
+    return `<span class="" v-if="dzj=='${dt}'">${text}</span>`;
   }
 };

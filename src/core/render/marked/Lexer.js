@@ -372,7 +372,13 @@ module.exports = class Lexer {
         tokens.push(token);
         continue;
       }
-
+      
+      //dzj
+      if (token = this.tokenizer.dzj(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }
       // link
       if (token = this.tokenizer.link(src)) {
         src = src.substring(token.raw.length);

@@ -20,14 +20,14 @@ See the [Quick start](quickstart.md) guide for more details.
 
 - [x] Emoji support
 
-- [y] Compatible with IE11
+- [y] Compatible with IE11 [ql 而过特务染个发] [gz 高丽再雕]
 + Support server-side rendering ([example](https://github.com/docsifyjs/docsify-ssr-demo))
 
-#2 Examples
+#2# Examples
 
 Check out the [Showcase](https://github.com/docsifyjs/awesome-docsify#showcase) to see docsify in use.
 
-#2 Donate
+#2# Donate
 
 Please consider donating if you think docsify is helpful to you or that my work is valuable. I am happy if you can help me [buy a cup of coffee](https://github.com/QingWei-Li/donate). :heart:
 
@@ -40,3 +40,5 @@ Users and the development team are usually in the [Gitter chat room](https://git
 _Vercel_ has given us a Pro account.
 
 <a href="https://vercel.com/?utm_source=docsifyjsdocs" target="_blank"><img src="_media/vercel_logo.svg" width="100px"></a>
+
+<button @click='onClick'>Say Hello</button>

@@ -73,9 +73,10 @@ module.exports = class Parser {
         case 'heading': {
           out += this.renderer.heading(
             this.parseInline(token.tokens),
-            token.depth,
+            token.depth,token.center,
             unescape(this.parseInline(token.tokens, this.textRenderer)),
-            this.slugger);
+            this.slugger,
+            );
           continue;
         }
         case 'code': {
@@ -213,6 +214,10 @@ module.exports = class Parser {
         }
         case 'html': {
           out += renderer.html(token.text);
+          break;
+        }
+        case 'dzj': {
+          out += renderer.dzj(token.dt,token.text);
           break;
         }
         case 'link': {

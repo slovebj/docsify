@@ -13,7 +13,7 @@ const block = {
   fences: /^ {0,3}(`{3,}(?=[^`\n]*\n)|~{3,})([^\n]*)\n(?:|([\s\S]*?)\n)(?: {0,3}\1[~`]* *(?:\n+|$)|$)/,
   hr: /^ {0,3}((?:- *){3,}|(?:_ *){3,}|(?:\* *){3,})(?:\n+|$)/,
   // heading: /^ {0,3}(#{1,6})(?=\s|$)(.*)(?:\n+|$)/,
-  heading: /^ {0,3}#([1-6]) +([^\n]*?)(?: +#+)? *(?:\n+|$)/,
+  heading: /^ {0,3}#([1-6])(#?) +([^\n]*?)(?: +#+)? *(?:\n+|$)/,
   blockquote: /^( {0,3}> ?(paragraph|[^\n]*)(?:\n|$))+/,
   list: /^( {0,3})(bull) [\s\S]+?(?:hr|def|\n{2,}(?! )(?! {0,3}bull )\n*|\s*$)/,
   html: '^ {0,3}(?:' // optional indentation
@@ -70,7 +70,7 @@ block._comment = /<!--(?!-?>)[\s\S]*?(?:-->|$)/;
 block.html = edit(block.html, 'i')
   .replace('comment', block._comment)
   .replace('tag', block._tag)
-  .replace('attribute', / +[a-zA-Z:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/)
+  .replace('attribute', / +[a-zA-Z@:_][\w.:-]*(?: *= *"[^"\n]*"| *= *'[^'\n]*'| *= *[^\s"'=<>`]+)?/)
   .getRegex();
 
 block.paragraph = edit(block._paragraph)
@@ -174,6 +174,7 @@ const inline = {
     + '|^<\\?[\\s\\S]*?\\?>' // processing instruction, e.g. <?php ?>
     + '|^<![a-zA-Z]+\\s[\\s\\S]*?>' // declaration, e.g. <!DOCTYPE html>
     + '|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>', // CDATA section
+  dzj: /^\[([a-z]{2})\s([\s\S]*?)\]/,
   link: /^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/,
   reflink: /^!?\[(label)\]\[(?!\s*\])((?:\\[\[\]]?|[^\[\]\\])+)\]/,
   nolink: /^!?\[(?!\s*\])((?:\[[^\[\]]*\]|\\[\[\]]|[^\[\]])*)\](?:\[\])?/,
@@ -258,7 +259,7 @@ inline.autolink = edit(inline.autolink)
   .replace('email', inline._email)
   .getRegex();
 
-inline._attribute = /\s+[a-zA-Z:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/;
+inline._attribute = /\s+[a-zA-Z@:_][\w.:-]*(?:\s*=\s*"[^"]*"|\s*=\s*'[^']*'|\s*=\s*[^\s"'=<>`]+)?/;
 
 inline.tag = edit(inline.tag)
   .replace('comment', inline._comment)

@@ -150,7 +150,8 @@ module.exports = class Tokenizer {
         type: 'heading',
         raw: cap[0],
         depth: parseInt(cap[1]),
-        text: cap[2]
+        center: cap[2]?' style="text-align:center"':'',
+        text: cap[3]
       };
     }
   }
@@ -727,6 +728,18 @@ module.exports = class Tokenizer {
         type: 'ic',
         raw: cap[0],
         text: cap[1],
+      };
+    }
+  }
+
+  dzj(src) {
+    const cap = this.rules.inline.dzj.exec(src);
+    if (cap) {
+      return {
+        type: 'dzj',
+        raw: cap[0],
+        dt:cap[1],
+        text: cap[2],
       };
     }
   }
