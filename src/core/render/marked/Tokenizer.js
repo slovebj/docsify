@@ -738,8 +738,7 @@ module.exports = class Tokenizer {
       return {
         type: 'dzj',
         raw: cap[0],
-        dt:cap[1],
-        text: cap[2],
+        text:cap[0].replace(/\[?([a-z]{2})\[/g, '"$1":"').replace(/\]/g, '",').replace('",",', '"')
       };
     }
   }

@@ -103,6 +103,16 @@
         methods: {
           onClick () {
             this.dzj="ql";
+          },
+          cdzj(text) {
+            text = JSON.parse('{'+text+'}');
+            if (text.hasOwnProperty(this.dzj)) {
+              return text[this.dzj];
+            } else if(text.hasOwnProperty('aa')) {
+              return text['aa'];
+            }else{
+              return '!!!错误!!!';
+            }
           }
         },
       },

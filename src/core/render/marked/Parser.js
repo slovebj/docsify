@@ -217,7 +217,7 @@ module.exports = class Parser {
           break;
         }
         case 'dzj': {
-          out += renderer.dzj(token.dt,token.text);
+          out += renderer.dzj(token.text);
           break;
         }
         case 'link': {

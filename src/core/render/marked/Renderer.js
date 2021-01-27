@@ -160,7 +160,7 @@ module.exports = class Renderer {
         + '"></i>';
   }
 
-  dzj(dt,text) {
-    return `<span class="" v-if="dzj=='${dt}'">${text}</span>`;
+  dzj(text) {
+    return `<span class="">{{ cdzj('${text}') }}</span>`;
   }
 };

@@ -20,7 +20,10 @@ See the [Quick start](quickstart.md) guide for more details.
 
 - [x] Emoji support
 
-- [y] Compatible with IE11 [ql 而过特务染个发] [gz 高丽再雕]
+- [y] Compatible with IE11 [ql[而过特务染个发]gz[高丽再雕]]
+
+
+
 + Support server-side rendering ([example](https://github.com/docsifyjs/docsify-ssr-demo))
 
 #2# Examples
