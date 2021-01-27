@@ -8,9 +8,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1073867_o60h3gei98.css">
   <link rel="stylesheet" href="/themes/vue.css" title="vue">
-  <link rel="stylesheet" href="/themes/dark.css" title="dark" disabled>
-  <link rel="stylesheet" href="/themes/buble.css" title="buble" disabled>
-  <link rel="stylesheet" href="/themes/pure.css" title="pure" disabled>
+  <!-- Theme: Simple -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css" title="buble" disabled>
+  <!-- Theme: Simple Dark -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css" title="dark" disabled>
   <script src="//cdn.jsdelivr.net/npm/docsify-plugin-carbon@1.0.1/index.min.js"></script>
   <style>
     nav.app-nav li ul {
@@ -27,17 +28,6 @@
 <body>
   <div id="app"></div>
 
-  <script src="/lib/docsify.js"></script>
-  <script src="/lib/vue.min.js"></script>
-  <!-- docsify-themeable (latest v0.x.x) -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
-  <script src="/lib/plugins/search.js"></script>
-  <script src="/lib/plugins/front-matter.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-nginx.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-php.min.js"></script>
-  <!-- <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script> -->
 </body>
   <script>
     window.$docsify = {
@@ -76,34 +66,34 @@
         pathNamespaces: ['/zh-cn', '/de-de', '/ru-ru', '/es']
       },
       pagination: {
-        previousText: '上一章节',
-        nextText: '下一章节',
+        previousText: '上一卷',
+        nextText: '下一卷',
         crossChapter: true,
         crossChapterText: true,
       },
-      plugins: [
-        DocsifyCarbon.create('CEBI6KQE', 'docsifyjsorg'),
-        function (hook, vm) {
-          hook.beforeEach(function (html) {
-            if (/githubusercontent\.com/.test(vm.route.file)) {
-              url = vm.route.file
-                .replace('raw.githubusercontent.com', 'github.com')
-                .replace(/\/master/, '/blob/master')
-            } else if (/jsdelivr\.net/.test(vm.route.file)) {
-              url = vm.route.file
-                .replace('cdn.jsdelivr.net/gh', 'github.com')
-                .replace('@master', '/blob/master')
-            } else {
-              url = 'https://github.com/docsifyjs/docsify/blob/master/docs/' + vm.route.file
-            }
-            var editHtml = '[:memo: Edit Document](' + url + ')\n'
-            return editHtml
-              + html
-              + '\n\n----\n\n'
-              + '<a href="https://docsify.js.org" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Powered by docsify</a>'
-          })
-        },
-      ],
+      // plugins: [
+      //   DocsifyCarbon.create('CEBI6KQE', 'docsifyjsorg'),
+      //   function (hook, vm) {
+      //     hook.beforeEach(function (html) {
+      //       if (/githubusercontent\.com/.test(vm.route.file)) {
+      //         url = vm.route.file
+      //           .replace('raw.githubusercontent.com', 'github.com')
+      //           .replace(/\/master/, '/blob/master')
+      //       } else if (/jsdelivr\.net/.test(vm.route.file)) {
+      //         url = vm.route.file
+      //           .replace('cdn.jsdelivr.net/gh', 'github.com')
+      //           .replace('@master', '/blob/master')
+      //       } else {
+      //         url = 'https://github.com/docsifyjs/docsify/blob/master/docs/' + vm.route.file
+      //       }
+      //       var editHtml = '[:memo: Edit Document](' + url + ')\n'
+      //       return editHtml
+      //         + html
+      //         + '\n\n----\n\n'
+      //         + '<a href="https://docsify.js.org" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">Powered by docsify</a>'
+      //     })
+      //   },
+      // ],
       vueGlobalOptions: {
         data() {
           return {
@@ -118,5 +108,18 @@
       },
     }
   </script>
+  <script src="/lib/docsify.js"></script>
+  <script src="/lib/vue.min.js"></script>
+  <!-- docsify-themeable (latest v0.x.x) -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+  <script src="/lib/plugins/search.js"></script>
+  <script src="/lib/plugins/front-matter.js"></script>
+  <script src="/lib/plugins/docsify-tabs.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-markdown.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-nginx.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-php.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
 
 </html>

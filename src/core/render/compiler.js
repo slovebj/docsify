@@ -4,7 +4,6 @@ import { isFn, merge, cached, isPrimitive } from '../util/core';
 import { tree as treeTpl } from './tpl';
 import { genTree } from './gen-tree';
 import { slugify } from './slugify';
-import { emojify } from './emojify';
 import { getAndRemoveConfig, removeAtag } from './utils';
 import { imageCompiler } from './compiler/image';
 import { highlightCodeCompiler } from './compiler/code';
@@ -103,7 +102,6 @@ export class Compiler {
           html = compile.parser(text);
         }
 
-        html = config.noEmoji ? html : emojify(html);
         slugify.clear();
 
         return html;

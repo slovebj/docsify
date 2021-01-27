@@ -12,29 +12,29 @@ module.exports = class Renderer {
     this.options = options || defaults;
   }
 
-  code(code, infostring, escaped) {
-    const lang = (infostring || '').match(/\S*/)[0];
-    if (this.options.highlight) {
-      const out = this.options.highlight(code, lang);
-      if (out != null && out !== code) {
-        escaped = true;
-        code = out;
-      }
-    }
+  // code(code, infostring, escaped) {
+  //   const lang = (infostring || '').match(/\S*/)[0];
+  //   if (this.options.highlight) {
+  //     const out = this.options.highlight(code, lang);
+  //     if (out != null && out !== code) {
+  //       escaped = true;
+  //       code = out;
+  //     }
+  //   }
 
-    if (!lang) {
-      return '<pre><code>'
-        + (escaped ? code : escape(code, true))
-        + '</code></pre>\n';
-    }
+  //   if (!lang) {
+  //     return '<pre><code>'
+  //       + (escaped ? code : escape(code, true))
+  //       + '</code></pre>\n';
+  //   }
 
-    return '<pre><code class="'
-      + this.options.langPrefix
-      + escape(lang, true)
-      + '">'
-      + (escaped ? code : escape(code, true))
-      + '</code></pre>\n';
-  }
+  //   return '<pre><code class="'
+  //     + this.options.langPrefix
+  //     + escape(lang, true)
+  //     + '">'
+  //     + (escaped ? code : escape(code, true))
+  //     + '</code></pre>\n';
+  // }
 
   blockquote(quote) {
     return '<blockquote>\n' + quote + '</blockquote>\n';
@@ -44,27 +44,27 @@ module.exports = class Renderer {
     return html;
   }
 
-  heading(text, level, center, raw, slugger) {
-    if (this.options.headerIds) {
-      return `<h${level} id="${slugger.slug(raw)}"${center}>${text}</h${level}>`;
-    }
-    // ignore IDs
-    return '<h' + level + center + '>' + text + '</h' + level + '>\n';
-  }
+  // heading(text, level, center, raw, slugger) {
+  //   if (this.options.headerIds) {
+  //     return `<h${level} id="${slugger.slug(raw)}"${center}>${text}</h${level}>`;
+  //   }
+  //   // ignore IDs
+  //   return '<h' + level + center + '>' + text + '</h' + level + '>\n';
+  // }
 
   hr() {
     return this.options.xhtml ? '<hr/>\n' : '<hr>\n';
   }
 
-  list(body, ordered, start) {
-    const type = ordered ? 'ol' : 'ul',
-      startatt = (ordered && start !== 1) ? (' start="' + start + '"') : '';
-    return '<' + type + startatt + '>\n' + body + '</' + type + '>\n';
-  }
+  // list(body, ordered, start) {
+  //   const type = ordered ? 'ol' : 'ul',
+  //     startatt = (ordered && start !== 1) ? (' start="' + start + '"') : '';
+  //   return '<' + type + startatt + '>\n' + body + '</' + type + '>\n';
+  // }
 
-  listitem(text) {
-    return '<li>' + text + '</li>\n';
-  }
+  // listitem(text) {
+  //   return '<li>' + text + '</li>\n';
+  // }
 
   checkbox(checked) {
     return '<input '
@@ -74,9 +74,9 @@ module.exports = class Renderer {
       + '> ';
   }
 
-  paragraph(text) {
-    return '<p>' + text + '</p>\n';
-  }
+  // paragraph(text) {
+  //   return '<p>' + text + '</p>\n';
+  // }
 
   table(header, body) {
     if (body) body = '<tbody>' + body + '</tbody>';
@@ -122,32 +122,32 @@ module.exports = class Renderer {
     return '<del>' + text + '</del>';
   }
 
-  link(href, title, text) {
-    href = cleanUrl(this.options.sanitize, this.options.baseUrl, href);
-    if (href === null) {
-      return text;
-    }
-    let out = '<a href="' + escape(href) + '"';
-    if (title) {
-      out += ' title="' + title + '"';
-    }
-    out += '>' + text + '</a>';
-    return out;
-  }
+  // link(href, title, text) {
+  //   href = cleanUrl(this.options.sanitize, this.options.baseUrl, href);
+  //   if (href === null) {
+  //     return text;
+  //   }
+  //   let out = '<a href="' + escape(href) + '"';
+  //   if (title) {
+  //     out += ' title="' + title + '"';
+  //   }
+  //   out += '>' + text + '</a>';
+  //   return out;
+  // }
 
-  image(href, title, text) {
-    href = cleanUrl(this.options.sanitize, this.options.baseUrl, href);
-    if (href === null) {
-      return text;
-    }
+  // image(href, title, text) {
+  //   href = cleanUrl(this.options.sanitize, this.options.baseUrl, href);
+  //   if (href === null) {
+  //     return text;
+  //   }
 
-    let out = '<img src="' + href + '" alt="' + text + '"';
-    if (title) {
-      out += ' title="' + title + '"';
-    }
-    out += this.options.xhtml ? '/>' : '>';
-    return out;
-  }
+  //   let out = '<img src="' + href + '" alt="' + text + '"';
+  //   if (title) {
+  //     out += ' title="' + title + '"';
+  //   }
+  //   out += this.options.xhtml ? '/>' : '>';
+  //   return out;
+  // }
 
   text(text) {
     return text;

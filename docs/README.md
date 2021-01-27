@@ -27,6 +27,56 @@ See the [Quick start](quickstart.md) guide for more details.
 
 Check out the [Showcase](https://github.com/docsifyjs/awesome-docsify#showcase) to see docsify in use.
 
+<!-- tabs:start -->
+
+#3 **Tab A**
+
+This is some text.
+
+* List item A-1
+* List item A-2
+
+```js
+// JavaScript
+function add(a, b) {
+  return a + b;
+}
+```
+
+#4 **Tab B**
+
+#3 This is a heading {docsify-ignore}
+
+This is some text.
+
+* List item B-1
+* List item B-2
+
+```css
+/* CSS */
+body {
+  background: white;
+  color: #222;
+}
+```
+
+#4 **Tab C**
+
+#3 This is a heading {docsify-ignore}
+
+This is some text.
+
+* List item C-1
+* List item C-2
+
+```html
+<!-- HTML -->
+<h1>Heading</h1>
+<p>This is a paragraph.</p>
+```
+
+<!-- tabs:end -->
+
 #2# Donate
 
 Please consider donating if you think docsify is helpful to you or that my work is valuable. I am happy if you can help me [buy a cup of coffee](https://github.com/QingWei-Li/donate). :heart:

@@ -13,7 +13,7 @@ function install(hook) {
     let elms = Array.apply(
       null,
       document.querySelectorAll(
-        '.markdown-section img:not(.emoji):not([data-no-zoom])'
+        '.markdown-section img:not([data-no-zoom])'
       )
     );
 
