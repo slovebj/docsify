@@ -20,7 +20,7 @@ See the [Quick start](quickstart.md) guide for more details.
 
 - [x] Emoji support
 
-- [y] Compatible with IE11 [ql[而过特务染个发]gz[高丽再雕]]
+- [y] Compatible with IE11 [ql[而过特务染个发]gz[高丽再雕]]   [tj[人的国风大赏vdf]cn[高丽再雕]]
 
 
 

@@ -97,7 +97,7 @@
       vueGlobalOptions: {
         data() {
           return {
-            dzj: "gz",
+            dzj: "aa",
           };
         },
         methods: {
@@ -105,18 +105,22 @@
             this.dzj="ql";
           },
           cdzj(text) {
-            text = JSON.parse('{'+text+'}');
-            if (text.hasOwnProperty(this.dzj)) {
-              return text[this.dzj];
-            } else if(text.hasOwnProperty('aa')) {
-              return text['aa'];
+            if (text.indexOf(this.dzj) != -1) {
+              return text.match(new RegExp("(?<="+this.dzj+"\\[)[\\s\\S]*?(?=\\])"))[0];
+            } else if(text.indexOf('aa') != -1) {
+              return text.match(/(?<=aa\[)[\s\S]*?(?=\])/)[0];
             }else{
-              return '!!!错误!!!';
+              return '';
             }
           }
         },
       },
     }
+
+
+
+
+
   </script>
   <script src="/lib/docsify.js"></script>
   <script src="/lib/vue.min.js"></script>
