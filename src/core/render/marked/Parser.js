@@ -216,6 +216,10 @@ module.exports = class Parser {
           out += renderer.html(token.text);
           break;
         }
+        case 'pinyin': {
+          out += renderer.pinyin(token.text,token.rt);
+          break;
+        }
         case 'dzj': {
           out += renderer.dzj(token.text);
           break;

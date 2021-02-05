@@ -165,7 +165,7 @@ block.pedantic = merge({}, block.normal, {
  * Inline-Level Grammar
  */
 const inline = {
-  escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`{|}~])/,
+  escape: /^\\([!"#$%&'()*+,\-./:;<=>?@\[\]\\^_`\{|\}~])/,
   autolink: /^<(scheme:[^\s\x00-\x1f<>]*|email)>/,
   url: noopTest,
   tag: '^comment'
@@ -175,6 +175,7 @@ const inline = {
     + '|^<![a-zA-Z]+\\s[\\s\\S]*?>' // declaration, e.g. <!DOCTYPE html>
     + '|^<!\\[CDATA\\[[\\s\\S]*?\\]\\]>', // CDATA section
   dzj: /^\[([a-z]{2}\[[\s\S]*?\])\]/,
+  pinyin: /^\{([^{}()]+)\}\(([^{}()]+)\)/,
   link: /^!?\[(label)\]\(\s*(href)(?:\s+(title))?\s*\)/,
   reflink: /^!?\[(label)\]\[(?!\s*\])((?:\\[\[\]]?|[^\[\]\\])+)\]/,
   nolink: /^!?\[(?!\s*\])((?:\[[^\[\]]*\]|\\[\[\]]|[^\[\]])*)\](?:\[\])?/,
@@ -201,7 +202,7 @@ const inline = {
 
 // list of punctuation marks from common mark spec
 // without * and _ to workaround cases with double emphasis
-inline._punctuation = '!"#$%&\'()+\\-.,/:;<=>?@\\[\\]`^{|}~';
+inline._punctuation = '!"#$%&\'()+\\-.,/:;<=>?@\\[\\]`^\\{|\\}~';
 inline.punctuation = edit(inline.punctuation).replace(/punctuation/g, inline._punctuation).getRegex();
 
 // sequences em should skip over [title](link), `code`, <html>

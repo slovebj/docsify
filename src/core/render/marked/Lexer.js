@@ -372,7 +372,12 @@ module.exports = class Lexer {
         tokens.push(token);
         continue;
       }
-      
+      //pinyin
+      if (token = this.tokenizer.pinyin(src)) {
+        src = src.substring(token.raw.length);
+        tokens.push(token);
+        continue;
+      }      
       //dzj
       if (token = this.tokenizer.dzj(src)) {
         src = src.substring(token.raw.length);

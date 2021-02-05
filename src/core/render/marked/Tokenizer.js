@@ -742,4 +742,16 @@ module.exports = class Tokenizer {
       };
     }
   }
+
+  pinyin(src) {
+    const cap = this.rules.inline.pinyin.exec(src);
+    if (cap) {
+      return {
+        type: 'pinyin',
+        raw: cap[0],
+        text:cap[1],
+        rt:cap[2]
+      };
+    }
+  }
 };

@@ -163,4 +163,8 @@ module.exports = class Renderer {
   dzj(text) {
     return `<span class="">{{ cdzj('${text}') }}</span>`;
   }
+
+  pinyin(text,rt) {
+    return `<ruby>${text}<rt>${rt}</rt></ruby>`;
+  }
 };
